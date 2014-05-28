@@ -19,6 +19,6 @@ class FontAwesomeServiceProvider extends ServiceProvider
 	 */
 	public function register()
 	{
-		$this->app->bind('font-awesome', 'Digbang\FontAwesome\FontAwesome');
+		$this->app->singleton('font-awesome', 'Digbang\FontAwesome\FontAwesome');
 	}
 }

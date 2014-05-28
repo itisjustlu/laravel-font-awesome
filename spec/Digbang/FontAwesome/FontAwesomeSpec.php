@@ -24,6 +24,13 @@ class FontAwesomeSpec extends ObjectBehavior
 		$this->icon('fa-times', 'fa-bigger')->shouldMatch('/class="[^"]*fa fa-times[^"]* fa-bigger[^"]*"/');
 	}
 
+	function it_should_let_me_change_the_tag()
+	{
+		$this->setTag('span');
+
+		$this->icon('times')->shouldMatch('/^<span/');
+	}
+
 	public function getMatchers()
 	{
 		return [
