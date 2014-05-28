@@ -1,0 +1,22 @@
+{
+    "name": "digbang/font-awesome",
+    "description": "Helper class to build FontAwesome icons",
+    "authors": [
+        {
+            "name": "gcontreras",
+            "email": "gcontreras@digbang.com"
+        }
+    ],
+	"autoload": {
+		"psr-4": {
+			"Digbang\\FontAwesome\\": "src/"
+		}
+	},
+    "require": {
+		"illuminate/support": "~4.1",
+		"illuminate/html": "~4.1"
+    },
+    "require-dev": {
+		"phpspec/phpspec": "~2.0"
+    }
+}
