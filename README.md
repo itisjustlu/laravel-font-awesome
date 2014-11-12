@@ -1,6 +1,8 @@
 Digbang/FontAwesome
 ===================
 
+![Fake build status](http://img.shields.io/badge/build-passing-green.svg)
+
 Helper class to create FontAwesome icons with a predefined markup.
 
 Usage
