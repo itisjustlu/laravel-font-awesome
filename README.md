@@ -3,7 +3,7 @@ LucasRuroken\FontAwesome
 
 Helper class to create FontAwesome icons with a predefined markup. Bassed on Digbang\FontAwesome
 
-**This package allows to create a facade in your laravel application. But if you want, you can use this package without laravel**
+**This package allows you to create a facade in your laravel application. But if you want, you can use this package without laravel**
 
 Usage
 -----
