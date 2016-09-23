@@ -2,17 +2,9 @@
 
 namespace LucasRuroken\FontAwesome;
 
-use Collective\Html\HtmlBuilder;
-
 class FontAwesome
 {
 	protected $tag = 'i';
-	protected $htmlBuilder;
-
-	function __construct(HtmlBuilder $htmlBuilder)
-	{
-		$this->htmlBuilder = $htmlBuilder;
-	}
 
 	/**
 	 * Builds a FontAwesome icon HTML.
@@ -29,12 +21,16 @@ class FontAwesome
 		return
 			$this->openTag(
 				' class="' . $classes . '"' .
-				$this->htmlBuilder->attributes($options)
+				$this->attributes($options)
 			) .
 			$this->closeTag();
 	}
 
-	protected function parse($name)
+    /**
+     * @param $name
+     * @return string
+     */
+    protected function parse($name)
 	{
 		if (substr($name, 0, 3) == 'fa-')
 		{
@@ -44,22 +40,38 @@ class FontAwesome
 		return "fa-$name";
 	}
 
-	protected function openTag($content = '')
+    /**
+     * @param string $content
+     * @return string
+     */
+    protected function openTag($content = '')
 	{
 		return '<' . $this->tag . $content . '>';
 	}
 
-	protected function closeTag()
+    /**
+     * @return string
+     */
+    protected function closeTag()
 	{
 		return '</' . $this->tag . '>';
 	}
 
-	protected function getClasses($name, $extra = '')
+    /**
+     * @param $name
+     * @param string $extra
+     * @return string
+     */
+    protected function getClasses($name, $extra = '')
 	{
 		return 'fa ' . $this->parse($name) . ($extra ? " $extra" : '');
 	}
 
-	protected function parseOptions($options)
+    /**
+     * @param $options
+     * @return array
+     */
+    protected function parseOptions($options)
 	{
 		if (!is_array($options))
 		{
@@ -84,4 +96,39 @@ class FontAwesome
 	{
 		return $this->tag;
 	}
+
+    /**
+     * @param $attributes
+     * @return string
+     */
+    public function attributes($attributes)
+    {
+        $html = [];
+
+        foreach ((array) $attributes as $key => $value) {
+            $element = $this->attributeElement($key, $value);
+
+            if (! is_null($element)) {
+                $html[] = $element;
+            }
+        }
+
+        return count($html) > 0 ? ' ' . implode(' ', $html) : '';
+    }
+
+    /**
+     * @param $key
+     * @param $value
+     * @return string
+     */
+    protected function attributeElement($key, $value)
+    {
+        if (is_numeric($key)) {
+            $key = $value;
+        }
+
+        if (! is_null($value)) {
+            return $key . '="' . e($value) . '"';
+        }
+    }
 }
