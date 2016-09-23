@@ -1,9 +1,8 @@
-Digbang/FontAwesome
-===================
+LucasRuroken\FontAwesome
+========================
 
-![Fake build status](http://img.shields.io/badge/build-passing-green.svg)
-
-Helper class to create FontAwesome icons with a predefined markup.
+Helper class to create FontAwesome icons with a predefined markup. Bassed on Digbang\FontAwesome
+**This package allows to create a facade in your laravel application. But if you want, you can use this package without laravel**
 
 Usage
 -----
@@ -11,10 +10,15 @@ Usage
 ### Basic usage
 
 ```php
-FontAwesome::icon('icon', 'extra-class')
-// or...
+$fa = new FontAwesome();
+$fa->icon('icon', ['class' => 'extra-class'])
+```
+
+### Basic usage Laravel 5.*
+```php
 FontAwesome::icon('icon', ['class' => 'extra-class'])
 ```
+
 
 Would result in...
 
@@ -28,7 +32,7 @@ You can also add any other attributes to the html.
 Doing...
 
 ```php
-FontAwesome::icon('times', ['title' => 'Delete this!'])
+$fa->icon('times', ['title' => 'Delete this!'])
 ```
 
 would result in...
@@ -43,8 +47,8 @@ You can change the tag used by the library.
 Doing...
 
 ```php
-FontAwesome::setTag('span');
-FontAwesome::icon('edit');
+$fa->setTag('span');
+$fa->icon('edit');
 ```
 
 would result in...
@@ -56,12 +60,12 @@ would result in...
 Laravel
 -------
 
-Add the service provider and facade to your `app/config/app.php` file:
+Add the service provider and facade to your `config/app.php` file:
 
 ```php
 'providers' => array(
 	...
-	'Digbang\FontAwesome\FontAwesomeServiceProvider',
+	'LucasRuroken\FontAwesome\FontAwesomeServiceProvider',
 	...
 );
 ```
@@ -71,7 +75,7 @@ And add the class alias, so you can call it like `\FontAwesome::icon`
 ```php
 'aliases' => array(
 	...
-	'FontAwesome' => 'Digbang\FontAwesome\Facade',
+	'FontAwesome' => 'LucasRuroken\FontAwesome\Facade',
 	...
 );
 ```
