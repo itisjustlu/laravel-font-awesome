@@ -105,10 +105,12 @@ class FontAwesome
     {
         $html = [];
 
-        foreach ((array) $attributes as $key => $value) {
+        foreach ((array) $attributes as $key => $value)
+        {
             $element = $this->attributeElement($key, $value);
 
-            if (! is_null($element)) {
+            if (! is_null($element))
+            {
                 $html[] = $element;
             }
         }
@@ -119,15 +121,17 @@ class FontAwesome
     /**
      * @param $key
      * @param $value
-     * @return string
+     * @return void|string
      */
     protected function attributeElement($key, $value)
     {
-        if (is_numeric($key)) {
+        if (is_numeric($key))
+        {
             $key = $value;
         }
 
-        if (! is_null($value)) {
+        if (! is_null($value))
+        {
             return $key . '="' . e($value) . '"';
         }
     }

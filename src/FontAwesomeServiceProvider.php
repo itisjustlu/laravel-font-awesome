@@ -1,4 +1,7 @@
-<?php namespace Digbang\FontAwesome;
+<?php
+
+namespace LucasRuroken\FontAwesome;
+
 use Illuminate\Support\ServiceProvider;
 
 /**
@@ -9,7 +12,7 @@ class FontAwesomeServiceProvider extends ServiceProvider
 {
 	public function boot()
 	{
-		$this->package('digbang/font-awesome');
+		$this->package('lucasruroken/laravel-font-awesome');
 	}
 
 	/**
@@ -19,6 +22,6 @@ class FontAwesomeServiceProvider extends ServiceProvider
 	 */
 	public function register()
 	{
-		$this->app->singleton('font-awesome', 'Digbang\FontAwesome\FontAwesome');
+		$this->app->singleton('font-awesome', 'LucasRuroken\FontAwesome\FontAwesome');
 	}
 }
