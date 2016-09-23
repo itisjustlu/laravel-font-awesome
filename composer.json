@@ -3,20 +3,17 @@
     "description": "Helper class to build FontAwesome icons",
     "authors": [
         {
-            "name": "gcontreras",
-            "email": "gcontreras@digbang.com"
+            "name": "lucasruroken",
+            "email": "lucasjavierjuarez@hotmail.com"
         }
     ],
 	"autoload": {
 		"psr-4": {
-			"Digbang\\FontAwesome\\": "src/"
+			"LucasRuroken\\FontAwesome\\": "src/"
 		}
 	},
     "require": {
-		"illuminate/support": "~4.1",
-		"illuminate/html": "~4.1"
-    },
-    "require-dev": {
-		"phpspec/phpspec": "~2.0"
+		"illuminate/support": "~5.3",
+        "laravelcollective/html": "5.3.*"
     }
 }
