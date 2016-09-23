@@ -1,9 +1,9 @@
-<?php namespace Digbang\FontAwesome;
-use Illuminate\Html\HtmlBuilder;
+<?php
 
-/**
- * Class FontAwesome
- */
+namespace LucasRuroken\FontAwesome;
+
+use Collective\Html\HtmlBuilder;
+
 class FontAwesome
 {
 	protected $tag = 'i';
@@ -13,7 +13,6 @@ class FontAwesome
 	{
 		$this->htmlBuilder = $htmlBuilder;
 	}
-
 
 	/**
 	 * Builds a FontAwesome icon HTML.
